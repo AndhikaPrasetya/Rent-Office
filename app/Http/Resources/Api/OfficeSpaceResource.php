@@ -2,7 +2,8 @@
 
 namespace App\Http\Resources\Api;
 
-use App\Filament\Resources\CityResource;
+
+use App\Http\Resources\Api\CityResource;
 use App\Models\OfficeSpaceBenefits;
 use App\Models\OfficeSpacePhoto;
 use Illuminate\Http\Request;

@@ -10,9 +10,13 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/city/{city:slug}',[CityController::class, 'show']);
-Route::apiResource('/cities',CityController::class);
-Route::get('/office/{officeSpace:slug}',[OfficeSpaceController::class, 'show']);
-Route::apiResource('/offices',OfficeSpaceController::class);
-Route::post('/booking-transaction',[BookingTransactionsController::class, 'store']);
-Route::post('/check-booking',[BookingTransactionsController::class, 'booking_details']);
+Route::middleware('api_key')->group(function(){
+
+    Route::get('/city/{city:slug}',[CityController::class, 'show']);
+    Route::apiResource('/cities',CityController::class);
+    Route::get('/office/{officeSpace:slug}',[OfficeSpaceController::class, 'show']);
+    Route::apiResource('/offices',OfficeSpaceController::class);
+    Route::post('/booking-transaction',[BookingTransactionsController::class, 'store']);
+    Route::post('/check-booking',[BookingTransactionsController::class, 'booking_details']);
+});
+
