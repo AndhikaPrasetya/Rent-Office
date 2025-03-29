@@ -73,6 +73,19 @@ class OfficeSpaceResource extends Resource
                ->options([
                 true=>'Not Available',
                 false=>'Available'
+               ]),
+                Forms\Components\Select::make('tag')
+               ->options([
+                'unpopular'=>'Unpopular',
+                'popular'=>'Popular',
+               ]),
+                Forms\Components\Select::make('rating')
+               ->options([
+                1 => '⭐ 1',
+                2 => '⭐⭐ 2',
+                3 => '⭐⭐⭐ 3',
+                4 => '⭐⭐⭐⭐ 4',
+                5 => '⭐⭐⭐⭐⭐ 5',
                ])
                ->required(),
 

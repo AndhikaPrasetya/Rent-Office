@@ -22,7 +22,9 @@ class OfficeSpace extends Model
         'is_full_booked',
         'price',
         'duration',
-        'city_id'
+        'city_id',
+        'rating',
+        'tag'
     ];
 
     public function setNameAttribute($value)
