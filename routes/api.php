@@ -11,7 +11,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::middleware('api_key')->group(function(){
-
     Route::get('/city/{city:slug}',[CityController::class, 'show']);
     Route::apiResource('/cities',CityController::class);
     Route::get('/office/{officeSpace:slug}',[OfficeSpaceController::class, 'show']);

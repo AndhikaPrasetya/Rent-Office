@@ -22,11 +22,11 @@ class BookingTransactions extends Model
         'duration'
     ];
 
-    public function generateUniqueTrxId(){
+    public static function generateUniqueTrxId(){
         $prefix= "FO";
         do {
             $randomString = $prefix . mt_rand(1000,9999);
-        } while (self::where('booking_trx_id', $randomString)->exist());
+        } while (self::where('booking_trx_id', $randomString)->exists());
         return $randomString;
     }
 
